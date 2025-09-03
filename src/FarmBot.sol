@@ -12,7 +12,7 @@ contract FarmBot {
     // Mainnet addresses
     address public constant AAVE_V3_POOL = 0x87870BceD4D87a94a3DB5B2067b8daCF0e8cc06c;
     address public constant UNISWAP_V3_ROUTER = 0xE592427A0AEce92De3Edee1F18E0157C05861564;
-    address public constant USDC = 0xa0B86a33e964E4B31c895d03B7E6A2cE1d6F3c39;
+    address public constant USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
     address public constant WETH9 = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
     
     // Configuration

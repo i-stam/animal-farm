@@ -49,11 +49,13 @@ cp .env.example .env
 ### 3. Test on Fork
 
 ```bash
-# Run tests on mainnet fork
-ALCHEMY_API_KEY=your_key_here forge test --fork-url https://eth-mainnet.alchemyapi.io/v2/your_key_here -vv
+# Run tests on mainnet fork (requires .env file with RPC_URL)
+forge test -vv
 
 # Test specific function
-forge test --match-test testForceExecute --fork-url https://eth-mainnet.alchemyapi.io/v2/your_key_here -vvv
+forge test --match-test testForceExecute -vvv
+
+# Tests automatically fork mainnet using vm.createFork() in setUp()
 ```
 
 ### 4. Deploy Contract
@@ -102,7 +104,7 @@ Configure in `.env`:
 
 - **Aave V3 Pool**: `0x87870Bced4D87A94a3DB5B2067b8daCf0e8cc06c`
 - **Uniswap V3 Router**: `0xE592427A0AEce92De3Edee1F18E0157C05861564`
-- **USDC**: `0xA0b86a33E964E4B31c895D03b7E6A2Ce1D6F3c39`
+- **USDC**: `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
 - **WETH9**: `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`
 
 ## Testing
@@ -110,20 +112,20 @@ Configure in `.env`:
 ### Run All Tests
 
 ```bash
-forge test --fork-url https://eth-mainnet.alchemyapi.io/v2/$ALCHEMY_API_KEY
+forge test -vv
 ```
 
 ### Specific Test Categories
 
 ```bash
 # Test APR checking
-forge test --match-test testGetCurrentUSDCApr --fork-url https://eth-mainnet.alchemyapi.io/v2/$ALCHEMY_API_KEY -vv
+forge test --match-test testGetCurrentUSDCApr -vv
 
 # Test execution logic  
-forge test --match-test testExecuteIfProfitable --fork-url https://eth-mainnet.alchemyapi.io/v2/$ALCHEMY_API_KEY -vv
+forge test --match-test testExecuteIfProfitable -vv
 
 # Test emergency functions
-forge test --match-test testEmergency --fork-url https://eth-mainnet.alchemyapi.io/v2/$ALCHEMY_API_KEY -vv
+forge test --match-test testEmergency -vv
 ```
 
 ## Security Considerations

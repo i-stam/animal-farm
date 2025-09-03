@@ -7,9 +7,6 @@ verbosity = 2
 
 # Mainnet forking configuration
 [rpc_endpoints]
-mainnet = "https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_API_KEY}"
-
-[etherscan]
-mainnet = { key = "${ETHERSCAN_API_KEY}" }
+mainnet = "${RPC_URL}"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
